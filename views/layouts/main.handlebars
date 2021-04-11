@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Own Blog</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<nav class="navbar navbar-dark bg-dark sticky-top">
+    <span class="navbar-brand mb-0 h1">Welcome, <span class="text-info">{{name}}</span>
+
+        <span></span></span>
+    <span>
+        <button onclick="loginFormHandler()" class="visible no-button  btn-outline-secondary btn-lg"
+            id="login">login</button>
+        <button onclick="logoutFormHandler()" class="invisible no-button btn-outline-secondary btn-lg"
+            id="logout">logout</button>
+    </span>
+</nav>
+
+<body>
+
+    <main class="container container-fluid mt-5">
+        {{{ body }}}
+    </main>
+
+    <script src="js/auth.js"></script>
+
+</body>
+
+</html>
