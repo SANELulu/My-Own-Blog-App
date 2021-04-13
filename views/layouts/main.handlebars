@@ -14,17 +14,28 @@
 
 </head>
 
+{{!-- navbar --}}
 <nav class="navbar navbar-dark bg-dark sticky-top">
-    <span class="navbar-brand mb-0 h1">Welcome, <span class="text-info">{{name}}</span>
+
+    {{!-- logo --}}
+    <div class="flex-column justify-space-around">
+        <header class="display-flex justify-space-between align-center p-2">
+            <a href="/">
+                <img src="./assets/logo2.png" role="img" aria-label="logo" width="60" height="40"></img>
+            </a>
+        </header>
+    </div>
+
+    <span class="navbar-brand mb-0 h1"><span class="text-info"></span>
 
         <span></span></span>
     <span>
-        <button onclick="loginFormHandler()" class="visible no-button  btn-outline-secondary btn-lg"
-            id="login">login</button>
-        <button onclick="logoutFormHandler()" class="invisible no-button btn-outline-secondary btn-lg"
-            id="logout">logout</button>
+        <button onclick="loginRoute()" class="no-button  btn-outline-secondary btn-lg" id="login">login</button>
+        <button onclick="logoutFormHandler()" class="no-button btn-outline-secondary btn-lg" id="logout">logout</button>
     </span>
 </nav>
+{{!-- navbar end --}}
+
 
 <body>
 
@@ -33,6 +44,7 @@
     </main>
 
     <script src="js/auth.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
 </body>
 
