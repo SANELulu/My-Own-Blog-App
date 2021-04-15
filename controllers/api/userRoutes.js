@@ -1,7 +1,5 @@
 const router = require('express').Router();
 const { User } = require('../../models');
-// const { sequelize } = require('../../models/user');
-// const { router } = require('../homeroutes');
 
 router.post('/login', async ( req, res ) => {
 
@@ -52,7 +50,6 @@ router.post('/login', async ( req, res ) => {
         res.status(400).json(err);
     }
 });
-
 router.post('/signup', async (req, res) => {
     try {
       const newUser = await User.create(req.body);
@@ -64,8 +61,6 @@ router.post('/signup', async (req, res) => {
       res.status(400).json(err);
     }
 });
-
-
 router.get('/logout', (req, res) => {
     if (req.session.logged_in) {
       req.session.destroy(() => {

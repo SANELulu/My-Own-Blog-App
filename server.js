@@ -5,6 +5,7 @@ const exphs = require('express-handlebars');
 const controllers = require('./controllers');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const compression = require('compression');
 require('dotenv').config();
 
 const app = express();
@@ -22,7 +23,7 @@ const sess = {
     };
 
 app.use(session(sess));
-
+app.use(compression()) 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 

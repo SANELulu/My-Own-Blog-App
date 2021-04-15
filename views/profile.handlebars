@@ -1,16 +1,25 @@
 <div class="row">
     <div class="col justify-content-center">
-        <div class="form-group">
+        <form class="form blog-form">
 
-            <input class="blogTitle" placeholder="title">
-            <br>
-            <br>
-            <input style="height:150px " class="blogBody" placeholder="body">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="private" id="private">
-                <label for="blog-title">Private</label>
+            <div class="form-group">
+                <input id="blog-title" placeholder="title">
             </div>
-            <button class="btn btn btn-danger btn-lg" type="submit">Post</button>
-        </div>
+
+            <div class="form-group">
+                <input style="height:150px " id="blog-body" placeholder="body">
+            </div>
+
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="private" id="private">
+                    <label for="blog-title">Private</label>
+                </div>
+            </div>
+
+            <button id="post-Btn" class="btn btn btn-danger btn-lg" type="submit">Post</button>
+        </form>
     </div>
+
+</div>
 </div>

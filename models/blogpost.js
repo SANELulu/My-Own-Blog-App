@@ -20,6 +20,10 @@ blogPost.init (
             type: DataTypes.STRING,
             allowNull: false,
         },
+        private: {
+            type: DataTypes.TINYINT ,
+            allowNull: true,
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
@@ -27,6 +31,7 @@ blogPost.init (
                 key: 'id'
             }
         }
+
     },
     {
     sequelize, 
