@@ -24,6 +24,17 @@ blogPost.init (
             type: DataTypes.TINYINT ,
             allowNull: true,
         },
+        // author: {
+        //     type: DataTypes.STRING,
+        //     references: {
+        //         model: 'user',
+        //         key: 'name'
+        //     }
+        // },
+        date: {
+            type: DataTypes.DATEONLY,
+            allowNull: false,
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {

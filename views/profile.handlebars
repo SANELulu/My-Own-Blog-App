@@ -1,25 +1,20 @@
+</div>
 <div class="row">
-    <div class="col justify-content-center">
-        <form class="form blog-form">
-
-            <div class="form-group">
-                <input id="blog-title" placeholder="title">
-            </div>
-
-            <div class="form-group">
-                <input style="height:150px " id="blog-body" placeholder="body">
-            </div>
-
-            <div class="form-group">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="private" id="private">
-                    <label for="blog-title">Private</label>
+    <div class="card-body">
+        <h5 class="card-title">Blog Posts</h5>
+        <ul>
+            {{#each postsUser.blogPosts as |blogPost|}}
+            <div class="card">
+                <div class="card-header">
+                    {{blogPost.date}}
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{blogPost.blog_title}}</h5>
+                    <p class="card-text">{{blogPost.blog_body}}</p>
                 </div>
             </div>
-
-            <button id="post-Btn" class="btn btn btn-danger btn-lg" type="submit">Post</button>
-        </form>
+            <br>
+            {{/each}}
+        </ul>
     </div>
-
-</div>
 </div>

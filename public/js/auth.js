@@ -1,9 +1,14 @@
 const loginBtn = document.querySelector('.login-form');
 const signupBtn = document.querySelector('.signup-form');
-const logoutBtn = document.querySelector('.logout')
+const logoutBtn = document.querySelector('.logout');
+const newBlogBtn = document.querySelector('.newBlog-btn');
 // const logoutForm = document.querySelector('#logout');
 // const loginBtn = document.querySelector('#login-btn');
 
+//redirect to /postblog page withnav bar button
+const newBlogRedirect = async (event) => {
+    window.location.href = '/post'
+}
 //function for redirect to login page
 const loginRoute = async (event) => {
     // if(!req.session.logged_in){
@@ -103,4 +108,4 @@ const logoutFormHandler = async () => {
 if(loginBtn){loginBtn.addEventListener('submit',loginFormHandler)};
 if(signupBtn){signupBtn.addEventListener('submit',signupFormHandler)};
 if(logoutBtn){logoutBtn.addEventListener('click',logoutFormHandler)};
-
+if(newBlogBtn){newBlogBtn.addEventListener('click', newBlogRedirect )}

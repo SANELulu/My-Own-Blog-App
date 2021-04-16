@@ -1,4 +1,5 @@
 const blogBtn = document.querySelector('.blog-form');
+const deleteBtn = document.querySelector('.delete-btn')
 
 const postBlog = async (event) => {
     event.preventDefault();
@@ -26,8 +27,20 @@ const postBlog = async (event) => {
         }
     }
 }
+const deletePost = async (event) => {
+    event.preventDefault();
+
+    const id = event.target
+    console.log(id);
+    const response = await fetch(`/api/blogpost/${id}`, {
+        method: 'DELETE',
+      });
+
+}
+
    
     
 
 
 if(blogBtn){blogBtn.addEventListener('submit',postBlog)};
+if(deleteBtn){deleteBtn.addEventListener('submit',deletePost)};
