@@ -14,6 +14,7 @@ router.get('/login', (req, res) => {
     res.render('login')
     }
 })
+
 router.get('/post', (req,res) => {
         res.render('post');
 } )
@@ -25,11 +26,17 @@ router.get('/profile', async (req, res) => {
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password']},
             include: {
+                
                 model: blogPost, 
+                include: {
+                    model: User,
+                } 
             }
         })
         const postsUser = userData.get({ plain: true });
+        console.log("+++++++++++")
         console.log(postsUser);
+        console.log("+++++++++++")
         res.render('profile', {
           postsUser,
           logged_in: true

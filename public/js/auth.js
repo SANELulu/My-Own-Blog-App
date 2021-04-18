@@ -5,7 +5,8 @@ const newBlogBtn = document.querySelector('.newBlog-btn');
 // const logoutForm = document.querySelector('#logout');
 // const loginBtn = document.querySelector('#login-btn');
 
-//redirect to /postblog page withnav bar button
+
+//redirect to /post page withnav bar button
 const newBlogRedirect = async (event) => {
     window.location.href = '/post'
 }
