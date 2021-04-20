@@ -3,9 +3,32 @@ const {  User, blogPost } = require('../models');
 const withAuth = require('../utils/auth');
 console.log('hitting controllers/homeroutes.js')
 
-router.get('/', (req, res) => {
-    res.render('homepage')
-});
+router.get('/', async (req, res) => {
+    try {
+      const postData = await blogPost.findAll({
+        include: [
+          {
+            model: User,
+            attributes: ['name'],
+          },
+          // {
+          //   model: Comment,
+          //   attributes: ['comment_body', 'date', 'user_id'],
+          // },
+        ],
+      });
+  
+      const posts = postData.map((post) => post.get({ plain: true }));
+      console.log(posts);
+
+      res.render('homepage', {
+        posts, 
+        //  comments,
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {

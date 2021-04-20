@@ -29,18 +29,33 @@ const postBlog = async (event) => {
 }
 const deletePost = async (event) => {
     event.preventDefault();
-
-    const id = event.target
-    console.log(id);
+    console.log("deletePost hitting")
+    const id = event.target.getAttribute("post-id");
+    console.log(id)
+   
     const response = await fetch(`/api/blogpost/${id}`, {
         method: 'DELETE',
       });
-
+      if (response.ok) {
+        Toastify({
+            text: "Blog Deleted!",
+            backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+            className: "Success Toast",
+            gravity: "bottom",
+            position: "center"
+          }).showToast().then(window.location.href = '/profile')
+        
+      } else {
+        console.log("++++++++++++++++++")  
+        console.log('Failed to delete');
+        console.log("++++++++++++++++++")  
+      }
 }
 
-   
-    
+
+
+
 
 
 if(blogBtn){blogBtn.addEventListener('submit',postBlog)};
-if(deleteBtn){deleteBtn.addEventListener('submit',deletePost)};
+if(deleteBtn){deleteBtn.addEventListener('click',deletePost)};

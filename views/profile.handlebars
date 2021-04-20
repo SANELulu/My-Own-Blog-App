@@ -1,20 +1,25 @@
-</div>
 <div class="row">
     <div class="card-body">
-        <h5 class="card-title">Blog Posts</h5>
-        <ul>{{postsUser.name}}
-            {{#each postsUser.blogPosts as |blogPost|}}
-            <div class="card">
-                <div class="card-header">
-                    Posted on {{blogPost.date}} by {{blogPost.user.name}}
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">{{blogPost.blog_title}}</h5>
-                    <p class="card-text">{{blogPost.blog_body}}</p>
-                </div>
+        <h3>PROFILE: {{postsUser.name}}</h3>
+        {{#each postsUser.blogPosts as |blogPost|}}
+
+        <div class="card">
+            <div class="card-header">
+                {{blogPost.id}}
+                Posted on {{blogPost.date}} by {{blogPost.user.name}}
+                <button type="button" class="btn btn-danger btn-sm float-right delete-btn"
+                    post-id={{blogPost.id}}>Delete</button>
             </div>
-            <br>
-            {{/each}}
-        </ul>
+            <div class="card-body">
+                <h5 class="card-title">{{blogPost.blog_title}}</h5>
+                <p class="card-text">{{blogPost.blog_body}}</p>
+            </div>
+        </div>
+        <br>
+
+        {{/each}}
+
     </div>
 </div>
+{{!--
+<script src="js/blogPost.js"></script> --}}

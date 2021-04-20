@@ -15,6 +15,7 @@
 </head>
 
 {{!-- navbar --}}
+
 <nav class="navbar navbar-dark bg-dark sticky-top">
 
     {{!-- logo --}}
@@ -31,7 +32,7 @@
         <span></span></span>
     <span>
         <button onclick="loginRoute()" class="no-button  btn-outline-secondary btn-lg" id="login">login</button>
-        <button onclick="newBlogRedirect()" class="no-button btn-outline-secondary btn-lg" id="newBlog-btn">post new
+        <button onclick="newBlogRedirect()" class="no-button btn-outline-secondary btn-lg" id="newBlog-btn">post
         </button>
         <button onclick="logoutFormHandler()" class="no-button btn-outline-secondary btn-lg" id="logout">logout</button>
     </span>
@@ -40,6 +41,13 @@
 
 
 <body>
+    {{#if logged_in}}
+    <div class="row">
+        <div class="col-5">
+            <a>LOGGED IN</a>
+        </div>
+    </div>
+    {{/if}}
 
     <main class="container container-fluid mt-5">
         {{{ body }}}
@@ -48,6 +56,7 @@
     <script src="js/auth.js"></script>
     <script src="js/blogPost.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
 
 </body>
 

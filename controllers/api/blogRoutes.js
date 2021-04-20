@@ -19,8 +19,6 @@ router.post('/newBlog', withAuth, async (req, res) => {
             blog_body: req.body.blogBody,
             private: req.body.private,
             user_id: req.session.user_id,
-            // author: req.name,
-            
             date: new Date().toISOString().split('T')[0]
         });
         req.session.save(() => {
@@ -37,17 +35,18 @@ router.delete('/:id', withAuth, async (req, res) => {
             where: {
                 id: req.params.id,
                 user_id: req.session.user_id,
-        
             },
         });
+        
         if(!deletedPost) {
-            res.status(404).json({ message: 'No data found here!'});
+            res.status(404).json({ message: 'Data not found!'});
             return;
         }
+    res.status(200).json(deletedPost);
     } catch (err) {
         res.status(500) (err);
     }
-})
+});
 
 
 

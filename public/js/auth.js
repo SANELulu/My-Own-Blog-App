@@ -2,8 +2,7 @@ const loginBtn = document.querySelector('.login-form');
 const signupBtn = document.querySelector('.signup-form');
 const logoutBtn = document.querySelector('.logout');
 const newBlogBtn = document.querySelector('.newBlog-btn');
-// const logoutForm = document.querySelector('#logout');
-// const loginBtn = document.querySelector('#login-btn');
+
 
 
 //redirect to /post page withnav bar button
@@ -89,7 +88,6 @@ const signupFormHandler = async (event) => {
     }
 }
 //function to logout user and redirect to homepage
-
 const logoutFormHandler = async () => { 
     Toastify({
         text: "Logout Successful",
@@ -104,7 +102,6 @@ const logoutFormHandler = async () => {
         console.log("redirecting to homepage");
       })
   };
-
 
 if(loginBtn){loginBtn.addEventListener('submit',loginFormHandler)};
 if(signupBtn){signupBtn.addEventListener('submit',signupFormHandler)};
