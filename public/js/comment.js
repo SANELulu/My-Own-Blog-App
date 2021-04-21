@@ -4,12 +4,12 @@ const commentFunction = async (event) => {
     event.preventDefault();
     const comment = document.querySelector('#comment-text').value.trim();
     console.log(comment)
-    const id = event.target.getAttribute('post-id');
+    const id = parseInt(event.target.getAttribute('post-id'))
     console.log(id)
 
     if (comment) {
         // Send the e-mail and password to the server
-        const response = await fetch('/api/comment/', {
+        const response = await fetch('/api/comment/newComment', {
           method: 'POST',
           body: JSON.stringify({ comment, id }),
           headers: { 'Content-Type': 'application/json' },
@@ -24,7 +24,8 @@ const commentFunction = async (event) => {
               }).showToast();
             
           } else {
-            console.log("failed to post comment")
+
+            console.log("error")
           }
   
     }

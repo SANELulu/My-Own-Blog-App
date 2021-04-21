@@ -12,14 +12,20 @@ router.get('/', async (req, res) => {
             attributes: ['name'],
           },
           // {
+          //   model: blogPost, include: {model:User}
+          // }
+          // {
           //   model: Comment,
-          //   attributes: ['comment_body', 'date', 'user_id'],
+          //   attributes: ['comment_body', 'date'],
           // },
         ],
       });
   
       const posts = postData.map((post) => post.get({ plain: true }));
+      console.log("///////////");
       console.log(posts);
+      console.log("///////////");
+
 
       res.render('homepage', {
         posts, 

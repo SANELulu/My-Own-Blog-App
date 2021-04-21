@@ -1,5 +1,5 @@
-const blogBtn = document.querySelector('.blog-form');
-const deleteBtn = document.querySelector('.delete-btn')
+const blogBtn = document.querySelectorAll('.blog-form');
+const deleteBtn = document.querySelectorAll('.delete-btn')
 
 const postBlog = async (event) => {
     event.preventDefault();
@@ -57,5 +57,10 @@ const deletePost = async (event) => {
 
 
 
-if(blogBtn){blogBtn.addEventListener('submit',postBlog)};
-if(deleteBtn){deleteBtn.addEventListener('click',deletePost)};
+// if(blogBtn){blogBtn.addEventListener('submit',postBlog)};
+
+if(blogBtn){blogBtn.forEach(btn => {btn.addEventListener('submit',postBlog)
+})}
+
+if(deleteBtn){deleteBtn.forEach(btn => {btn.addEventListener('click',deletePost)
+})}
