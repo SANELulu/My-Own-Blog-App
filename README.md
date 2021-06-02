@@ -1,4 +1,4 @@
-# React-Employee-Directory
+# My-Own-Blog
 
 ## by Lucas Diaz
 
@@ -6,8 +6,7 @@
 
 ### Description
 
-- Employee Directory using react-table
-- Randomly generated users can be filteres according to the users selected column as well as search users.
+- Blog app where user can sign in , post, edit, and delete posts
 
 ---
 
@@ -15,7 +14,7 @@
 
 - <img src='https://img.shields.io/badge/bootstrap-blueviolet' alt="bootstrap-badge">
 - <img src='https://img.shields.io/badge/js-yellow' alt="js-badge">
-- <img src='https://img.shields.io/badge/react-blue' alt="react-table-badge">
+- <img src='https://img.shields.io/badge/handlebars-orange' alt="handlebars-badge">
 
 ---
 
@@ -26,8 +25,8 @@
 
 ---
 
-- https://sanelulu.github.io/React-Employee-Directory/
-- https://github.com/SANELulu/React-Employee-Directory
+- https://github.com/SANELulu/My-Own-Blog-App
+-
 
 #### TABLE OF CONTENTS
 
@@ -37,4 +36,4 @@
 - [Tools Used](#tools-used)
 - [Contact Me](#contact-Me)
 
-<img src='https://img.shields.io/github/last-commit/SANELulu/React-Employee-Directory?style=plastic' alt="badge">
+<img src='https://img.shields.io/github/last-commit/SANELulu/My-Own-Blog-App?style=plastic' alt="badge">
